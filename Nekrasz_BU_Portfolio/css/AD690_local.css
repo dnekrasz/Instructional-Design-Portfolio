@@ -1,0 +1,147 @@
+﻿/* Last updated 13 Sep 2017 */
+
+@charset "UTF-8";
+@import url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/css/bu_disted.css');
+@import url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/css/print.css') print;
+
+/* College graphic */
+body:after {
+	clear: both;
+	display: block;
+	content: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/colleges/metropolitan_college/college.png');
+	padding-top: 4em;
+	padding-bottom: 1.3em;
+	text-align: right;
+	}
+
+/* Hide/show due dates in the syllabus*/
+/* .date {display: none} */
+
+/* Custom CSS for this course goes under here */
+
+/* Get rid of mustard color background for images inside <figure> */
+figure, .figureNoMustard, .imageNoMustard {
+	background-color: #dadada;
+	border: 1px solid #b2b2b2;
+	padding: 10px 10px 10px 10px;
+	font: 18px Arial, Helvetica, sans-serif;
+	color: #333;
+	border-radius: 10px;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	}
+
+.figureNoMustard img, .imageNoMustard img {
+	border: 1px solid #b2b2b2;
+	}
+
+.periwinkle {background-color: #C9D8ED;}
+.marigold {background-color: #F4EB98;}
+.paleyellow {background-color: #FFFFCC;}
+.peachy {background-color: #F8905E;}
+.purplehaze {background-color: #6A6ACD;}
+.tableHeaderGray {background-color: #ededf3;}
+
+/* Space after list elements just like paragraphs, align without indent */
+ul.liSpaceAfter li {padding-bottom: 1.8em;}
+ol.liSpaceAfter li {padding-bottom: 1.8em;}
+ul.noindent {padding: 0.0em 0.2em 1.0em 0.7em;}
+ol.noindent {padding: 0.0em 0.2em 1.0em 0.7em;}
+
+/* Use in a <span> element for short math expressions inside text when MathJax is overkill, will work in other elements */
+.timesNewRoman {font-family: "Times New Roman", "serif"; font-size: 120%;}
+.timesNewRomanItalics {font-family: "Times New Roman", "serif"; font-size: 120%; font-style: italic;}
+
+/* For tables inside a <figure> element */
+table.tableFigure {background-color: white; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 0.7em; line-height: 1em; color: black; margin-top: 0; margin-bottom: 0;}	
+
+table.tableFigureBigText {background-color: white; font-family: Verdana, Arial, Helvetica, sans-serif; /*font-size: 0.7em;*/ line-height: 20px; color: black; margin-top: 0; margin-bottom: 0;}	
+
+table.whiteHeaders th {background-color: white;}
+table.whiteData td {background-color: white;}		/* For inside colored boxes */
+table.dataTopAlign td {vertical-align: top;}
+table.centerData td {text-align: center;}
+
+table.blueTable {border: 2px solid white; border-collapse: collapse;}
+table.blueTable th {background-color: #4f81bd; color: white; border: thin solid white; line-height: 1.2em; padding: 0.7em;}
+table.blueTable thead {border-bottom: 2px solid white;}
+table.blueTable tr:nth-child(odd) {background-color: #e9edf4;}
+table.blueTable tr:nth-child(even) {background-color: #cedeee;}
+table.blueTable td {color: black; border: thin solid white; text-align: center; padding: 0.7em;}
+
+table.financeTable td {text-align: right;}
+
+table.tableCourseCalendar td {text-align: right; padding-right: 1.6em;}
+table.tableCourseCalendar td:first-child {text-align: left;}
+
+table.tableAssignmentCalendar td:first-child {text-align: center;}
+table.tableAssignmentCalendar td:last-child {text-align: right;}
+
+/* For page metad690_W01M02T01_logistics.htm */
+table.table21 td:nth-child(1) {text-align: center;}
+table.table21 td:nth-child(2) {padding-right: 1.9em;}
+table.table21 td:nth-child(3) {text-align: center;}
+table.table21 td:nth-child(4) {text-align: center;}
+table.table21 td:nth-child(5) {text-align: center;}
+table.table21 td:nth-child(6) {padding-right: 2.0em;}
+table.table21 td:nth-child(7) {padding-right: 2.2em;}
+
+/* For metad690_W02M04T01_performanceMeasurement.htm */
+table.tableMLorder td {text-align: right;}
+table.tableMLorder td:nth-child(1) {text-align: center;}
+table.tableMLorder td:nth-child(2) {padding-right: 2.2em;}
+table.tableMLorder td:nth-child(3) {padding-right: 2.6em;}
+table.tableMLorder td:nth-child(4) {padding-right: 3.3em;}
+table.tableMLorder td:nth-child(5) {padding-right: 3.3em;}
+
+/* For metad690_W04M06T01_inventoryDef.htm */
+table.tableStyleInventory td:last-child {text-align: right; padding-right: 3.0em;}
+table.tableStyleInventory tr:nth-last-child(2) {font-weight: bold;}
+table.tableBalSheetInv {margin-bottom: 0; table-layout: fixed;}
+table.tableBalSheetInv tr {background-color: white;}
+table.tableBalSheetInv tr:nth-last-child(-n+10) {background-color: #ededf3;}
+table.tableBalSheetInv tr:nth-last-child(-n+5) {background-color: white;}
+table.tableBalSheetInv th {width: 25%; background-color: #C9D8ED;}
+table.tableBalSheetInv td {line-height: 1.0em;}
+table.tableBalSheetInv td:nth-last-child(-n+3) {text-align: right; padding-right: 4.0em;}
+
+/* For metad690_W04M06T02_inventoryMgmt.htm */
+table.tableGroceries td:last-child {text-align: right; padding-right: 2.5em;}
+
+/* For metad690_W05M07T02_costIntegration.htm */
+table.table12-1 {margin: 0; padding: 0;}
+table.table12-1 th {line-height: 1.2em;}
+table.table12-1 td {line-height: 1.5em; text-align: center;}
+table.table12_4 td {line-height: 0.8em;}
+table.table12_4 td:nth-child(1) {width: 35%;}
+table.table12_4 td:nth-child(2) {width: 20%; text-align: right; padding-right: 4.0em;}
+table.table12_4 td:nth-child(3) {width: 15%; text-align: right; padding-right: 2.8em;}
+table.table12_4 td:nth-child(4) {width: 15%; text-align: right; padding-right: 2.8em;}
+table.table12_4 td:nth-child(5) {width: 15%; text-align: right; padding-right: 2.8em;}
+
+/* For metad690_W06M08T01_intuition.htm */
+table.tableLatLong {font-size: 0.9em; line-height: 1.0em; color: black; margin-top: 0; margin-bottom: 0;}
+table.tableLatLong th {padding-top: 0.2em; padding-bottom: 0.2em;}
+table.tableLatLong td {padding-top: 0.2em; padding-bottom: 0.2em; text-align: right;}
+table.tableLatLong td:nth-child(1) {padding-right: 1.0em;}
+table.tableLatLong td:nth-child(2) {text-align: center;}
+table.tableLatLong td:nth-child(3) {text-align: center;}
+
+/* For metad690_W06M08T02_distance.htm */
+table.tableCombo {font-size: 80%;}
+table.tableCombo thead {border: solid 2px black;}
+table.tableCombo tbody {border: solid 2px black;}
+table.tableCombo th {padding: 0.1em 0.5em;}
+table.tableCombo td {padding: 0.1em 0.5em;}
+table.tableCombo td:first-child {text-align: center;}
+table.tableCombo td:last-child  {text-align: right;}
+table.tableDemand {line-height: 1.0em; font-size: 1.3em; padding: 0; margin-top: 1.2em;}
+table.tableDemand th {font-style: italic; border: solid 2px black; padding-top: 0.2em; padding-bottom: 0.2em;}
+table.tableDemand th:first-child {text-align: left; padding-left: 0.2em; padding-right: 1.8em;}
+table.tableDemand tbody {border: solid 2px black;}
+table.tableDemand td {padding-top: 0.2em; padding-bottom: 0.2em; padding-left: 0.2em;}
+table.tableDemand td:last-child  {text-align: right; padding-left: 2.0em; padding-right: 0.2em; border-left: solid 2px black;}
+table.tableDistance th {vertical-align: top;}
+table.tableDistance td {text-align: right; padding: 0.2em;}
+table.tableDistance td:first-child {text-align: left;}
+table.tableBestXY td:nth-last-child(-n+9) {background-color: #cbffcb;}

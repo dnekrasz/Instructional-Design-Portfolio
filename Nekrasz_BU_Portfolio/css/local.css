@@ -1,0 +1,274 @@
+﻿/* Last updated 10 Oct 2017 */
+
+@charset "UTF-8";
+@import url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/css/bu_disted.css');
+@import url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/css/print.css') print;
+
+/* College graphic */
+body:after {
+	clear: both;
+	display: block;
+	content: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/colleges/metropolitan_college/college.png');
+	padding-top: 4em;
+	padding-bottom: 1.3em;
+	text-align: right;
+	}
+	
+/* Custom CSS for this course goes under here */
+
+/*h4 {margin-bottom: 0.7em;}*/
+
+/* Space after list elements just like paragraphs, align without indent */
+ul.liSpaceAfter li {padding-bottom: 1.8em;}
+ol.liSpaceAfter li {padding-bottom: 1.8em;}
+ul.noindent {padding: 0.0em 0.2em 1.0em 0.7em;}
+ol.noindent {padding: 0.0em 0.2em 1.0em 0.7em;}
+
+/* Precede <ol><li> number with "Step ", i.e., "Step 1. " "Step 2. " "Step 3. ", etc., 
+	and get rid of the indent. */
+ol.stepOl {
+	counter-reset: item;
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+ol.stepOl li::before {
+	content: 'Step ' counter(item) '. ';
+	counter-increment: item;
+}
+
+/*  <ol><li> from 1. Xxxxxxx to 1.0 Xxxxxxx */
+ol.xPointZero {
+	counter-reset: item;
+	list-style-type: none;
+}
+ol.xPointZero li::before {
+	content: counter(item) '.0 ';
+	counter-increment: item;
+}
+
+/* For block-level elements inside an <li> element to get the text of this element to align with the text of the <li> element */
+.liParagraph {padding: 0 0 1.0em 0;}
+
+/* Use in a <span> element for short math expressions inside text when MathJax is overkill, will work in other elements */
+.timesNewRoman        {font-family: "Times New Roman", "serif"; font-size: 120%;}
+.timesNewRomanItalics {font-family: "Times New Roman", "serif"; font-size: 120%; font-style: italic;}
+
+/* Put a rounded border on block-level elements not inside other containers already having this */
+.roundedBorder {-webkit-border-radius:7px;
+				-moz-border-radius:7px;
+				-o-border-radius:7px;
+				border-radius:7px;}	
+
+/* Get rid of mustard color background for images inside <figure> */
+figure, .figureNoMustard, .imageNoMustard {
+	background-color: #dadada;
+	border: 1px solid #b2b2b2;
+	padding: 10px 10px 10px 10px;
+	font: 18px Arial, Helvetica, sans-serif;
+	color: #333;
+	border-radius: 10px;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	}
+
+.figureNoMustard img, .imageNoMustard img {
+	border: 1px solid #b2b2b2;
+	}
+
+/* For tables inside a <figure> element */
+table.tableFigure {background-color: white; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 0.7em; line-height: 1em; color: black; margin-top: 0; margin-bottom: 0;}	
+
+table.tableFigureBigText {background-color: white; font-family: Verdana, Arial, Helvetica, sans-serif; /*font-size: 0.7em;*/ line-height: 20px; color: black; margin-top: 0; margin-bottom: 0;}	
+
+table.whiteHeaders th {background-color: white;}
+table.dataTopAlign td {vertical-align: top;}
+table.dataBottomAlign td {vertical-align: bottom;}
+table.dataLeftAlign td {text-align: left;}
+table.dataRightAlign td {text-align: right;}
+table.dataCenterAlign td {text-align: center;}
+table.dataFirstLeftAlign td:first-child {text-align: left;}
+table.whiteData td {background-color: white;}
+
+/**********  USE THESE BELOW, NOT ABOVE  **********/
+table.headerWhite th {background-color: white;}
+table.headerTop th {vertical-align: top;}
+table.headerMiddle th {vertical-align: middle;}
+table.headerBottom th {vertical-align: bottom;}
+table.headerLeft th {text-align: left;}
+table.headerCenter th {text-align: center;}
+table.headerRight th {text-align: right;}
+table.headerLineHeightSmall th {line-height: 1.2em; padding: 0.2em;}
+table.headerLineHeightMed th {line-height: 1.4em; padding: 0.2em;}
+table.dataWhite td {background-color: white;}
+table.dataTop td {vertical-align: top;}
+table.dataMiddle td {vertical-align: middle;}
+table.dataBottom td {vertical-align: bottom;}
+table.dataLeft td {text-align: left;}
+table.dataCenter td {text-align: center;}
+table.dataRight td {text-align: right;}
+table.dataFirstLeft td:first-child {text-align: left;}
+table.dataFirstCenter td:first-child {text-align: center;}
+table.dataLineHeightSmall td {line-height: 1.0em; padding: 0.2em;}
+table.dataLineHeightMed td {line-height: 1.2em; padding: 0.2em;}
+
+.cellExcelGreen {color: #006100; background-color: #c6efce;}
+
+table.blueTable {border: 2px solid white; border-collapse: collapse;}
+table.blueTable th {background-color: #4f81bd; color: white; border: thin solid white; line-height: 1.2em; padding: 0.7em;}
+table.blueTable thead {border-bottom: 2px solid white;}
+table.blueTable tr:nth-child(odd)  {background-color: #e9edf4;}
+table.blueTable tr:nth-child(even) {background-color: #cedeee;}
+table.blueTable td {color: black; border: thin solid white; text-align: center; padding: 0.7em;}
+
+table.redTable {border: 2px solid white; border-collapse: collapse;}
+table.redTable th {background-color: #fa2633; color: white; border: thin solid white; line-height: 1.2em; padding: 0.7em;}
+table.redTable thead {border-bottom: 2px solid white;}
+table.redTable tr:nth-child(odd)  {background-color: #ffeded;}
+table.redTable tr:nth-child(even) {background-color: #fed6d7;}
+table.redTable td {color: black; border: thin solid white; text-align: center; padding: 0.7em;}
+
+table.tableCalendar {margin-top: 0.5em;}
+table.tableCalendar td:nth-last-child(-n+7) {text-align: right; padding-right: 1.7em;}
+.oddModule {background-color: #c9d8ed;}
+.evenModule {background-color: #f4eb98;}
+
+hr.hrFootnote {border: 0; height: 1px; background: black; margin-top: 4.0em;}
+
+/************************ -- OR -- ************************/
+/* For footnotes.  Put footnotes at the bottom of the page.  Put this <hr> then a <div class="small_font">
+   Put all the notes inside a paragraph:  <p><sup>#</sup> Blah blah blah... </p> */
+hr.footnote {width: 200px; border: none; border-top: 1px solid black; margin-top: 3.6em; margin-bottom: 1.5em; margin-left: 0; text-align: left;}
+
+.small_font {font-size:x-small;}
+
+/* Whoa!!  The new look-and-feel has HUGE text, so tables are HUGE.  Inside TY and Examples, they are too big */
+/* Prefer the classes dataLineHeightSmall and headerLineHeightSmall above? */
+table.tableSmaller {font-size: small; line-height: 1.2em;}
+table.tableSmaller th {padding-top: 0.2em; padding-bottom: 0.2em;}
+table.tableSmaller td {padding-top: 0.2em; padding-bottom: 0.2em;}
+
+.periwinkle {background-color: #C9D8ED;}
+.marigold {background-color: #F4EB98;}
+.paleyellow {background-color: #FFFFCC;}
+.lemonyellow {background-color: #F9F920;}
+.kellygreen {background-color: #2CFF3E;}
+.vermillion {background-color: #FC6117;}
+.skyblue {background-color: #51D0F7;}
+.peachy {background-color: #F8905E;}
+.purplehaze {background-color: #6A6ACD;}
+
+.windowsBlue {color: #2e74b3;}
+.windowsBlueI {color: #2e74b3; font-style: italic;}
+
+
+
+/* Indent block-level elements */
+.indentation {margin-left: 30px;}
+
+/* Indent first line of a block element */
+.indentFirstLine {text-indent: 30px;}
+
+/* Hanging indent */
+.hangingIndent {padding-left: 30px;
+				text-indent: -30px;}
+
+
+
+/* Writing text vertically, bottom-to-top, left-to-right.  Does not work very well in IE (nothing does)
+	Used in a table in metad510_M6L11T04_StudentT.html */
+.textVerticalB2T_L2R {writing-mode: sideways-lr;
+					  -webkit-writing-mode: sideways-lr;
+					  -ms-writing-mode: bt-lr;
+					  -ms-transform: none;
+					 /* -ms-writing-mode: sideways-lr;*/
+					  -o-writing-mode: sideways-lr;}
+
+/**************************** From bu_disted.css to be edited ****************************/
+/* Figures and images */
+
+figure, .figure, .image {
+	background-color: #dadada;
+	border: 1px solid #b2b2b2;
+	padding: 10px 10px 10px 10px;
+	font: 18px Arial, Helvetica, sans-serif;
+	color: #333;
+	border-radius: 10px;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	}
+
+.figure img {
+	padding: 20px 20px 20px 20px;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffe296), to(#fff4d4)); /* Safari 4-5, Chrome 1-9 */
+	background: -webkit-linear-gradient(top, #ffe296, #fff4d4); /* Safari 5.1, Chrome 10+ */ 
+	background: -moz-linear-gradient(top, #ffe296, #fff4d4); /* Firefox 3.6+ */
+	background: -ms-linear-gradient(top, #ffe296, #fff4d4); /* IE 10 */
+	background: -o-linear-gradient(top, #ffe296, #fff4d4); /* Opera 11.10+ */
+	background-color: #ffe296; /* fallback */
+	}
+
+.figure img, .image img {
+	border: 1px solid #b2b2b2;
+	}
+
+figcaption, .title, .caption, .credit {
+	display: block;
+	text-align:left;
+	line-height: normal;
+	padding-bottom: 3px;
+	}
+
+figcaption, .caption {
+	font-size:small;
+	}
+
+.credit {
+	font-size: x-small;
+	}
+
+/* Wrap numbered tables in the same gray rounded box as images, but without the supersized text 
+ *
+ * This is for the new look & feel
+ *
+ * Use my snippet, "frame, table" with this:
+ *
+<figure class="figureTable centermargin" style="width:NNN+2px;" title="Copyright &copy; Trustees of Boston University 2017. Images used for educational purposes TEACH Act (Technology, Education, and Copyright Harmonization Act of 2002). All copyrights belong to respective copyright holders.">
+	<div class="figureTableTitle">TITLE_TEXT_HERE</div>
+	<table class="data centertable figureTable dataWhite" width="NNNpx">
+	</table>
+	<div class="credit">AUTHOR_NAME, <em>PUBLICATION_NAME (Boston: Pearson, 2015).</em></div>
+</figure>
+ *
+ *
+ */
+figure.figureTable {
+	background-color: #f5f5f5;
+	border: 1px solid #c7cdd1;
+	padding: 0.714em;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	font: 1em Arial, Helvetica, sans-serif;
+	line-height: 1.8em;
+	color: black;
+	}
+table.figureTable {margin-top: 0; margin-bottom: 0;}
+.figureTableTitle{
+	display: block;
+	text-align:left;
+	font: 18px Arial, Helvetica, sans-serif;
+	color: #333;
+	line-height: normal;
+	padding-bottom: 3px;
+	}
+
+table.figureTable {margin-top: 0; margin-bottom: 0;}
+.figureTableTitle{
+	display: block;
+	text-align:left;
+	font: 18px Arial, Helvetica, sans-serif;
+	color: #333;
+	line-height: normal;
+	padding-bottom: 3px;
+	}
+

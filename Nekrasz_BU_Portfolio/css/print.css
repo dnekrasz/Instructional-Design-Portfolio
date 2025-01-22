@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* Last updated 23 June 2015 */
+
+
+body {
+	background: #FFF;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 10pt;
+	line-height: 12pt;
+	}
+
+
+a:link, a:visited {
+   color: #C00;
+   background: transparent;
+   text-decoration: underline;
+   }
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+	}
+   
+/* Print the URLs of hyperlinks in parentheses.
+The code is from http://www.alistapart.com/articles/goingtoprint/
+27 January 2017: Commented out because it's vile 
+
+a:link:after, a:visited:after {
+   content: " (" attr(href) ") ";
+   font-size: 90%;
+   }
+
+a[href^="/"]:after { 
+   content: " (http://www.bu.edu" attr(href) ") ";
+   }
+   
+   */
+
+
+/* Media objects - Since Flash doesn't print, this will put a boxed placeholder graphic in its place */
+.swf:before, .swfcenter:before {
+	display: block;
+	border: 1px solid #000;
+	content: url(https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/swf_placeholder.jpg);
+	margin: 1em;
+	padding: 0;
+	}
+
+
+/* Print a border around callout boxes */
+.tip, .tipcenter, .summary, .summarycenter, .story, .storycenter, .example, .examplecenter, .danger, .dangercenter {
+	margin: 1em;
+    padding: .7em;
+	border: 1px solid #000;
+	}
+
+/* Print a border around colored boxes */
+.boxBlue, .boxBlueCenter {
+	margin: 1em;
+    padding: .7em;
+	border: 1px solid #000;
+	}
+
+
+/* Print Test Yourself (ty.js and tym.js) questions and answers */
+
+/* Show TY multipart answers */
+.ty-content {
+	display: block !important;
+    }
+	
+/* Show TY binary answers */
+.test p, .testcenter p {
+	display: block !important;
+    }
+	
+/* Show TY radio and checkbox answers */
+table.ty td {
+	display: block !important;
+    }	
+
+/* Hide TY Show Answer buttons, radio buttons, and checkboxes */
+table.ty input, .test button, .testcenter button {
+	display:none;
+	}

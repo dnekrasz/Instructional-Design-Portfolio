@@ -1,0 +1,829 @@
+/* Last updated 31 May 2016 */
+
+/* Link to slideshow css */
+@import url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/css/slideshow.css');
+
+/* Elements */
+body { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 76%;
+	color: #000;
+	background-color: #fff;
+	margin: 2em; 
+	}
+
+p, ol, ul, table, div {
+	margin-top: 0;
+	font-size: 1em;
+	line-height: 1.8em;
+	}
+
+a:link { /* unvisited link */
+	color:#38556f;
+	}    
+
+a:visited { /* visited link */
+	color:#38556f;
+	}
+	
+a:hover { /* mouseover link */
+	color:#c00;
+	}
+	
+a:active { /* selected link */
+	color:#c00;
+	} 
+	
+/* Alignment */
+.leftmargin {
+	margin: 0.5em 0.8em 0.5em 0;
+	float:left;
+	display: inline;
+	}
+
+.right {
+	text-align: right;
+	}
+
+.rightmargin {
+	margin: 0.5em 0pt 0.5em 0.8em;
+	float: right;
+	display: inline;
+	}
+
+.center {
+	text-align: center;
+	}
+	
+.centermargin {
+	clear: both;
+	margin: 2em auto 2em auto;
+	display: block;
+	}
+
+table.centertable {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-family: 'Trebuchet MS', Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	}
+	
+h1 {
+	font-size: 2em;
+	padding-bottom: .2em;
+	border-bottom: solid 4px #c00;
+	margin-top: 0;
+	margin-bottom: 1.7em;
+	}
+
+h2 {
+	font-size: 1.7em;
+	padding-top: 1.3em;	
+	border-bottom: solid 2px #c00;
+	margin-bottom: 1.7em;
+	}
+
+
+h3 {
+	font-size: 1.4em;
+	padding-top: 1.4em;
+	border-bottom: solid 1px #000;
+	margin-bottom: 1.7em;
+	}
+
+h4 {
+	font-size: 1.4em;
+	padding-top: 1.4em;
+	margin-bottom: 0;
+	}
+
+/* Remove bottom border from h2 if follows an h1 */
+h1+h2 {
+	font-size: 1.7em;
+	padding-top: .7em;	
+	border-bottom: 0;
+	margin-bottom: .7em;
+	}
+
+/* Remove bottom border from h3 if follows an h2, remove bottom border from h3 if follows an h1*/
+h2+h3, h1+h3 {
+	font-size: 1.4em;
+	padding-top: .7em;	
+	border-bottom: 0;
+	margin-bottom: .7em;
+	}
+
+
+
+/* h4 headline for callout boxes */
+.boxBlue h4, .boxBlueCenter h4,
+.danger h4, .dangercenter h4,
+.definition h4, .definitioncenter h4,
+.eportfolio h4, .eportfoliocenter h4,
+.example h4, .examplecenter h4,
+.explore h4, .explorecenter h4,
+.favorite h4, .favoritecenter h4,
+.formula h4, .formulacenter h4,
+.fyi h4, .fyicenter h4,
+.important h4, .importantcenter h4,
+.key h4, .keycenter h4,
+.music h4, .musiccenter h4,
+.parchment h4, .parchmentcenter h4,
+.quote h4, .quotecenter h4, 
+.quiz h4, .quizcenter h4,
+.section h4, .sectioncenter h4,
+.story h4, .storycenter h4,
+.summary h4, .summarycenter h4,
+.supplement h4, .supplementcenter h4,
+.test h4, .testcenter h4,
+.tip h4, .tipcenter h4, 
+.twitter h4, .twittercenter h4 {
+	font-size: 1.4em;
+	padding-top: 0;
+	margin-top: 0;
+	margin-bottom: .3em;
+	line-height: 1em;
+	}
+
+/* Header for separating printed sections */
+header {
+	font-family: Tahoma, Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: large;
+	font-stretch:extra-condensed;
+	margin: 2em 0 2em 0;
+	border-left: 1.2em solid #c00;
+	padding-left: .4em;
+	}
+	
+/* Classes */
+.idNote {
+	background-color: #ff0;
+	color: #f00;
+	font-weight: bold;
+	}
+
+.mediaNote {
+	background-color: #00f;
+	color: #f00;
+	font-weight: bold;
+	}
+
+/* Colors */
+.red {
+	color: #cc0000;
+	}
+
+
+/* Data table */
+/* Borders, shaded headers */
+table.data {
+	border-collapse: collapse;
+	border: 1px solid #333;
+	margin: 2em;
+	}
+
+table.data td {
+	padding: .7em;
+	border: 1px solid #333;
+	}
+
+table.data th {
+	padding: .7em;
+	border: 1px solid #333;
+	background-color: #ededf3;
+	}
+
+/* Arrangement table */
+/* This one has no borders */
+table.arrange td {
+	padding: .3em;
+	vertical-align: top;
+	}
+
+table.arrange th {
+	padding: .3em;
+	background-color: #ededf3;
+	font-weight: normal;
+	}
+
+
+/* Wrappers to designate a SWF. The print.css style sheet uses this to print a placeholder graphic */
+.swf { 	
+	}
+
+.swfcenter {
+	text-align: center;
+	margin: .7em;
+	}
+
+
+/* Callout boxes */
+
+/* Basic callout boxes */
+.danger,
+.definition,
+.eportfolio,
+.example,
+.explore,
+.favorite,
+.formula,
+.fyi,
+.important,
+.key,
+.music,
+.quiz,
+.quote,
+.section,
+.story,
+.summary,
+.supplement,
+.test,
+.tip,
+.twitter {
+	padding: .7em .7em .7em 60px;
+	background-repeat: no-repeat;
+	background-position: .7em .7em;
+	}
+
+/* Centered callout boxes */
+.dangercenter,
+.definitioncenter,
+.eportfoliocenter,
+.examplecenter,
+.explorecenter,
+.favoritecenter,
+.formulacenter,
+.fyicenter,
+.importantcenter,
+.keycenter,
+.musiccenter,
+.quizcenter,
+.quotecenter,
+.sectioncenter,
+.storycenter,
+.summarycenter,
+.supplementcenter,
+.testcenter,
+.tipcenter,
+.twittercenter {
+	clear: both;
+	padding: .7em .7em .7em 60px;
+	background-repeat: no-repeat;
+	background-position: .7em .7em;
+	margin: 2em auto 2em auto;
+	width: 600px;
+  }
+
+
+
+/* Callout boxes with curved corners and shadows */
+.boxBlue,
+.boxBlueCenter,
+.danger,
+.dangercenter,
+.definition,
+.definitioncenter,
+.eportfolio,
+.eportfoliocenter,
+.example,
+.examplecenter,
+.explore,
+.explorecenter,
+.favorite,
+.favoritecenter,
+figure,
+.figure,
+.formula,
+.formulacenter,
+.fyi,
+.fyicenter,
+.image,
+.important,
+.importantcenter,
+.key,
+.keycenter,
+.music,
+.musiccenter,
+.parchment,
+.parchmentcenter,
+.quiz,
+.quizcenter,
+.quote,
+.quotecenter,
+.section,
+.sectioncenter,
+.story,
+.storycenter,
+.summary,
+.summarycenter,
+.supplement,
+.supplementcenter,
+.test,
+.testcenter,
+.tip,
+.tipcenter,
+.twittercenter, 
+.twitter,
+.video {
+	-webkit-border-radius:7px;
+	-moz-border-radius:7px;
+	-o-border-radius:7px;
+	border-radius:7px;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	}
+
+
+/* Icons for each type of callout box */
+.danger, .dangercenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_danger.png');
+	background-color: #fbd1e2;
+	border: 1px solid #f7b6d5;
+	}
+
+.definition, .definitioncenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_definition.png');
+	background-color: #dbdbda;
+	border: 1px solid #b6b7b5;
+	}
+
+.eportfolio, .eportfoliocenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_eportfolio.png');	
+	background-color: #00a9dd;
+	border: 1px solid #00607e;
+	}
+
+.example, .examplecenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_example.png');	
+	background-color: #c9d8ed;
+	border: 1px solid #9ec5ea;
+	}
+
+.explore, .explorecenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_explore.png');
+	background-color: #dceaa4;
+	border: 1px solid #b8d549;
+	}
+
+.favorite, .favoritecenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_favorite.png');
+	background-color: #cfd7e5;
+	border: 1px solid #9faecb;
+	}
+
+.formula, .formulacenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_formula.png');
+	background-color: #d3d8ff;
+	border: 1px solid #a7b0ff;
+	}
+
+.fyi, .fyicenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_fyi.png');
+	background-color: #d0e3fa;
+	border: 1px solid #a1c6f4;
+	}
+
+.important, .importantcenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_caution.png');
+	background-color: #ffd9c0;
+	border: 1px solid #ffb380;	
+	}
+
+.key, .keycenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_key.png');
+	background-color: #ecdbec;
+	border: 1px solid #d9b6d9;
+	}
+
+.music, .musiccenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_music.png');
+	background-color: #92da9e;
+	border: 1px solid #3e9453;
+	}
+
+.parchment, .parchmentcenter { /* Parchment is special because it has no icon and a repeating background */
+	padding: .7em .7em .7em .7em;
+	background-repeat: repeat;
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/parchment_background.png');
+	background-color: #f1d49a;
+	border: 1px solid #cbaa7d;
+	}
+	
+.parchmentcenter {
+	clear: both;	
+	margin: 2em auto 2em auto;
+	width: 650px;
+	}
+	
+.quiz, .quizcenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_questionMark.png');
+	background-color: #f3e7ff;
+	border: 1px solid #dab4ff;
+	}
+
+.quote, .quotecenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_quote.png');
+	background-color: #fff;
+	border: 1px solid #666;
+	}
+
+.section, .sectioncenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_section.png');
+	background-color: #f3dcab;
+	border: 1px solid #cf951d;
+	}
+
+.story, .storycenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_story.png');
+	background-color: #f0e7cf;
+	border: 1px solid #ded0a7;
+	}
+
+.summary, .summarycenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_chapter.png');
+	background-color: #fffbcc;
+	border: 1px solid #e6db55;
+	}
+
+.supplement, .supplementcenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_supplement.png');
+	background-color: #d9d0eb;
+	border: 1px solid #bca5ea;
+	}	
+	
+.test, .testcenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_test.png');
+	background-color: #fcddd0;
+	border: 1px solid #f9c2aa;
+	}
+	
+.tip, .tipcenter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_tip.png');
+	background-color: #efeee6;
+	border: 1px solid #cfe2d8;
+	}
+
+.twittercenter, .twitter {
+	background-image: url('https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/course_template_images/icon_twitter.png');
+	background-color: #B6EEFF;
+	border: 1px solid #75D2FF;
+}
+
+/* Rounded boxes */
+
+.boxBlue, .boxBlueCenter {
+	clear: both;
+	padding: .7em 2em 0em 2em;
+	background-color: #c9d8ed;
+	border: 1px solid #bdcbdf;
+	border-radius: 10px;
+	}
+
+.boxBlueCenter {
+	margin: 2em auto 2em auto;
+	width: 620px;
+	} 
+
+
+/* Style for video box */
+.video {
+	padding: .7em;
+	background-color: #dadada;
+	border: 1px solid #b2b2b2;
+	margin: auto auto 2em auto;
+	}
+	
+img.icondownload {
+	vertical-align: middle;
+	border: none;
+	margin-right: .7em;
+	}
+	
+/* Figures and images */
+
+figure, .figure, .image {
+	background-color: #dadada;
+	border: 1px solid #b2b2b2;
+	padding: 10px 10px 10px 10px;
+	font: 18px Arial, Helvetica, sans-serif;
+	color: #333;
+	border-radius: 10px;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	}
+
+.figure img {
+	padding: 20px 20px 20px 20px;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffe296), to(#fff4d4)); /* Safari 4-5, Chrome 1-9 */
+	background: -webkit-linear-gradient(top, #ffe296, #fff4d4); /* Safari 5.1, Chrome 10+ */ 
+	background: -moz-linear-gradient(top, #ffe296, #fff4d4); /* Firefox 3.6+ */
+	background: -ms-linear-gradient(top, #ffe296, #fff4d4); /* IE 10 */
+	background: -o-linear-gradient(top, #ffe296, #fff4d4); /* Opera 11.10+ */
+	background-color: #ffe296; /* fallback */
+	}
+
+.figure img, .image img {
+	border: 1px solid #b2b2b2;
+	}
+
+figcaption, .title, .caption, .credit {
+	display: block;
+	text-align:left;
+	line-height: normal;
+	padding-bottom: 3px;
+	}
+
+figcaption, .caption {
+	font-size:small;
+	}
+
+.credit {
+	font-size: x-small;
+	}
+
+
+/* Formatting for testYourself */
+.hide { 
+	display: none;
+	}
+
+.test td, .testcenter td {
+    vertical-align:top;
+    padding: .3em;
+    }
+
+#testTable td:first-child {
+	white-space:nowrap;
+	text-align:right;
+	}
+	
+#testTable td:first-child p {
+	white-space: normal;
+	text-align: left;
+	}
+
+.test button, .testcenter button {
+	padding: .25em .5em;
+	font-family:Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	line-height:1;
+	color:#444;
+	border:none;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.85);
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#bbb));
+	background-image: -moz-linear-gradient(0 100% 90deg, #bbb, #fff);
+	background-color:#fff;
+	-webkit-border-radius:.7em;
+	-moz-border-radius:.7em;
+	-o-border-radius:.7em;
+	border-radius:.7em;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
+	}
+	50% {
+		-webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.9);
+	}
+	100% {
+		-webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
+	}
+}
+
+
+.test button:hover, .testcenter button:hover {
+	-webkit-animation: pulse 1.5s infinite ease-in-out;
+	}
+
+.test tr td:first-child, .testcenter tr td:first-child {
+	white-space: nowrap;
+	text-align: right;
+	}
+
+.ty-toggle {
+	cursor: pointer;
+  	font-weight: bold;
+	}
+.ty-toggle::before {
+	content: '\25b6  ';	
+	}
+
+.ty-toggle-reveal::before {
+	content: '\25bc  ';
+	}
+	
+.ty-content {
+	display: none;
+	margin-left: 2em;
+	}
+
+.ty_check, .ty_x {
+	font-weight:bold;
+	font-size:1.5em;
+	}
+	
+.ty_check {
+	color:#3bb027;
+	}
+
+.ty_x {
+	color:#c00;
+	}
+
+/* TY Drill */
+.box {
+	width:182px;
+	height:82px;
+	line-height:82px;
+	margin: 5px 10px 0 0;
+	float:left;
+	border: 4px solid #f9c2aa;
+	cursor:pointer;
+	text-align:center;
+	background-color: #fff;
+	}
+	
+.box:hover {
+	border: 4px solid #ccc;
+	}
+			
+.feedbackcorrect, .feedbackwrong {
+	display: inline-block;
+	width: 584px;
+	height: 41px;
+	line-height: 41px;
+	padding-left: 5px;
+	margin-top: 5px;
+	font-size: 2em;
+	color:#fff;
+	}
+	
+.feedbackcorrect {
+	background-color: #090;
+	}
+
+.feedbackwrong {
+	background-color: #c30;
+	}
+
+#matchContent, #screen1, #screen2 {
+	width: 600px;
+	height: 172px;
+	}
+
+#matchContent{
+	position: relative;
+	overflow: hidden;
+	}
+
+#screen1{
+	padding:  0 0;
+	right: 0px;
+	position: absolute;
+	}
+
+#screen1 .box span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal; 
+  }
+  
+#screen2{
+	padding:  0 0;
+	right: -600px;
+	position: absolute;	
+	}
+	
+/* Toggle Boxes */
+
+/* Brief instruction to student. */
+.testobject p.task {
+    padding: 1em 1em 0;
+    color:#666;  /*medium gray */
+    font-size:95%;
+}
+
+/* Semi-flexible frame around the whole object */
+.testobject { 
+    width: 50%; 
+    min-width: 480px; /*stops shrinking in narrow screen */
+    max-width: 720px; /*stops expanding in wide screen */
+	
+    margin: 0 auto 1em; /* centers object on page */
+	
+    border: 1px solid #bbb;
+	-webkit-border-radius:7px;
+	-moz-border-radius:7px;
+	-o-border-radius:7px;
+	border-radius:7px;	
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Brief instruction to student iun a p tag. */
+.testobject p.task {
+    color:#666;  /*medium gray */
+    font-size:90%;
+	margin-bottom:0;
+    padding: .25em 1em 0; 
+}
+
+ /* A container to use around each one of the 
+ /* togglable sets inside the object.
+ /* Adds the white space below each prompt. */
+.concept, section.concept {
+    margin: 0 .5em .5em; 
+}
+
+/* The static title used at the top of the object. 
+/* This css allows you to use either h3 or h4 */
+.testobject h3.title, 
+.testobject h4.title {
+	color: #fff; /* white text */
+	background-color: #32326b; /* DARK BLUE */
+    font-size: 145%;
+    border: none; 
+	border-radius: 5px;
+	padding: 1em;
+	margin: 0.25em;
+}
+
+/* Note that each togglable "title" or prompt needs a p tag.
+/* The javascript expects p tags. Don't use heading tags. */
+
+/* There is additional CSS being applied by Dan's code.
+/* The styles here are adding back the colors and visual
+/* emphasis to be similar to learnobject's flash items.  */
+
+/* This is light text on DARK blue with an active toggle. */
+.ty-toggle.prompt {
+	background-color: #32326b;  /* DARK BLUE */
+    color: #fff;
+    font-size: 120%;
+    padding: 1em;
+	margin: 0.5em 0 .45em; 
+    border-radius: 5px;
+}
+
+/* Dark text on LIGHT blue nested prompt with active toggle. */
+.ty-toggle.subprompt {
+	background-color: #e4ecfd; /* LIGHT BLUE */
+    color: #333; /* dark gray */
+    font-size: 120%;
+    margin: 0 .5em;
+    padding: .7em;
+}
+
+/* Reveal this stuff to the student. */
+.ty-content.revealed { 
+    background-color: #fff;
+    margin: 0;
+    padding: 12px 6px 12px 36px; 
+}
+
+/* used for visual distinction in the revealed text. */
+.subhead { font-weight:bold;}.testobject1 {    width: 50%; 
+    min-width: 480px; /*stops shrinking in narrow screen */
+    max-width: 720px; /*stops expanding in wide screen */
+	
+    margin: 0 auto 1em; /* centers object on page */
+	
+    border: 1px solid #bbb;
+	-webkit-border-radius:7px;
+	-moz-border-radius:7px;
+	-o-border-radius:7px;
+	border-radius:7px;	
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.ty-content1 {    background-color: #fff;
+    margin: 0;
+    padding: 12px 6px 12px 36px; 
+}
+.ty-toggle1 {	background-color: #32326b;  /* DARK BLUE */
+    color: #fff;
+    font-size: 120%;
+    padding: 1em;
+	margin: 0.25em 0;
+	border-radius: 5px;
+}
+.ty-toggle1 {	background-color: #e4ecfd; /* LIGHT BLUE */
+    color: #333; /* dark gray */
+    font-size: 120%;
+    margin: 0 .5em;
+    padding: .7em;
+}

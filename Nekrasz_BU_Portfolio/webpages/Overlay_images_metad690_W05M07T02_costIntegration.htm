@@ -1,0 +1,248 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<title>Total Cost Integration</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../css/AD690_local.css">
+<script src="https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/scripts/jQueryLibrary.min.js"></script>
+<script src="https://onlinecampus.bu.edu/bbcswebdav/courses/00cwr_odeelements/scripts/ty.js"></script>
+<!-- script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src="../css/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+
+<h2>Total Cost Integration</h2>
+
+<p>In order to identify the least total cost network design, it is important to understand and analyze the <strong>transportation economics</strong> and <strong>inventory economics</strong> as a function of the number of warehouses deployed. </p>
+
+
+
+<h3>Transportation Economics</h3>
+
+<p>There are two basic principles for economical transportation:</p>
+
+<ol>
+	<li>The <strong>Quantity principle</strong> is that individual shipments should be as large as the carrier can legally transport in a vehicle</li>
+	<li>The <strong>Tapering principle</strong> is that large shipments should be transported distances as long as possible</li>
+</ol>
+
+<p>Both of these principles target allocating the fixed costs associated with trans-shipment over as much weight and as many miles as possible. The economic justification for opening a warehouse comes from the possible savings of consolidated shipments over the costs of opening and operating the warehouse.</p>
+
+
+
+<div class="examplecenter">
+
+	<p><strong>Example:</strong> Suppose a manufacturer ships directly from manufacturing location to the market with a transportation cost rate of $0.0728/lbs.</p>
+
+	<p>Average shipment size is assumed to be 500 lbs. This indicates that transportation cost of an average shipment is $0.0728/lbs &times; 500 lbs =  $36.40.</p>
+
+	<p>If the size of the shipment is 20,000 lbs or bigger, transportation cost rate reduces to $0.024/lbs. Also, local delivery within the market costs $0.0135/lbs.</p>
+
+	<p>Given these parameters, if products are shipped to the market with quantities over 20,000 lbs and distributed locally, then their total transportation cost would be $0.024 + $0.0135 = $0.0375/lbs.</p>
+
+	<p>This gives us the transportation cost of an average shipment as $0.0375/lbs &times; 500 lbs = $18.75.</p>
+
+	<p>Thus, if we open a warehouse close to the market and consolidate the shipments from the manufacturer to the warehouse, we will have $36.4 &ndash; $18.75 = $17.65 savings per an average shipment. If this savings justifies the fixed and operating costs of the warehouse, it will be deployed.</p>
+
+</div>
+
+
+
+<p>Figure 5.1 presents the general relationship between transportation costs and the number of warehouses deployed. Increasing the number of warehouses decreases the average outbound distance to customers, that is the distance between warehouse locations to customers, and so decreases the outbound transportation costs. On the other hand, increasing the number of warehouses increases the total inbound costs (transportation cost from manufacturer to warehouses). This is because with the increasing number of warehouses inbound lot sizes decreases, resulting in a significant loss of economies of scale in inbound transportation. In other words, the benefits of order consolidation disappear. Given these cost dynamics, total transportation cost (inbound plus outbound) first decreases with increasing number of warehouses up to a threshold number; passing this threshold it increases with the increasing number of warehouses, as the economies of scale with shipment consolidation weaken. It is important to maintain cost savings in inbound transportation through shipment consolidations.</p>
+
+<figure class="image centermargin" style="width:664px;" title="Copyright &copy; Trustees of Boston University 2015. Images used for educational purposes TEACH Act (Technology, Education, and Copyright Harmonization Act of 2002). All copyrights belong to respective copyright holders.">
+	<div class="title">Figure 5.1: Transportation cost as a function of the number of warehouses</div>
+	<img src="images/ad690w5_transportationCost.png" alt="" width="662" height="456">
+    <div class="credit">Source: Bowersox et al., 2013, p. 293</div>
+</figure>
+
+
+
+<h3>Inventory Economics</h3>
+
+<p>Most facilities in a logistical network store inventory. Thus, the amount of inventory carried in the system depends on the number of facilities deployed.</p>
+
+<p>Inventory carried by warehouses can be classified into three groups: </p>
+
+<ol>
+	<li>Base stock,</li>
+	<li>safety stock, and </li>
+	<li>in-transit inventory.</li>
+</ol>
+
+<p><strong>Base stock</strong> is the half of the order size (shipment size) used. Typically, order size is set by following the economic order quantity (EOQ) model, which is discussed in the inventory management module. Base stock typically increases with the number of warehouses deployed. Suppose order size is determined as EOQ. In the EOQ formula, order size is proportional to the square root of demand; thus increasing demand increases order size at a slower rate. So, when the number of warehouses decreases and demand is consolidated to fewer warehouses, the total order size of the system required to meet the aggregate demand decreases. As total order size decreases, base stock decreases along with the decreasing number of warehouses.</p>
+
+<blockquote>
+	<p><strong>Note:</strong> The textbook (Bowersox et al., 2013) implies that base stock is independent of the number of warehouses deployed. This statement is faulty, as discussed above. Order size of a warehouse depends on the demand assigned it, and as the number of warehouses increases demand served may decrease.</p>
+</blockquote>
+
+
+
+<div class="definitioncenter">
+
+	<p>The performance cycle is defined as the time period between order placement and receipt. This time period is also referred as lead time. </p>
+
+</div>
+
+
+
+<p>Increasing the number of warehouses increases the number of performance cycles in the logistical system. <strong>In-transit inventory</strong> is the inventory being moved from one location to another in the supply chain; it is the captive inventory in transportation vehicles. In general, adding more warehouses (increasing performance cycles) can decrease both the inbound (manufacturer to warehouse) and outbound (warehouse to customer) transportation times. Thus, in-transit inventory decreases as the total in-transit days decrease along with the increasing number of warehouses.</p>
+
+
+
+<div class="examplecenter">
+
+	<p><strong>Example:</strong> Consider the two logistical network designs presented in Figures 5.2 and 5.3 below.</p>
+
+	<p>In the first configuration (Figure 5.2), a single warehouse X serves a single product to both markets A and B. Forecasted demands for markets A and B are 6 and 7, and performance cycles for markets A and B are 6 and 10 days, respectively.</p>
+
+	<p>In the second configuration (Figure 5.3) a second warehouse, labeled Y, is added to serve only market B (market A is now served only by warehouse X). The addition of warehouse Y reduces the performance cycle of market B to 4 days. This reduction of total in-transit days results in reducing in-transit inventory from 53 units in the first configuration to 32 units in the second configuration with the added warehouse Y, as detailed in Table 5.1.</p>
+
+</div>
+
+
+
+<div class="centermargin" style="display: table;">
+
+	<div class="image" style="display: inline-block; vertical-align: middle; margin-bottom=0;">
+		<p class="title" style="margin-bottom: 0;">Figure 5.2: Logistical Network:<br>Two Markets, One Warehouse</p>
+		<img src="images/ad690w5_Bowersox_fig12.3.png" width="232" height="196" alt="">
+	</div><!--
+
+ --><div style="display: inline-block; vertical-align: middle;">
+		<img src="images/AD690w5_right_blue_arrow_trans.png" width="162" height="59" alt="">
+	</div><!--
+
+ --><div class="image" style="display: inline-block; vertical-align: middle; margin-bottom=0;">
+		<p class="title" style="margin-bottom: 0;">Figure 5.3: Logistical Network:<br>Two Markets, Two Warehouses</p>
+		<img src="images/ad690w5_Bowersox_fig12.4.png" width="240" height="196" alt="">
+	</div><!--
+
+ <p class="center" style="margin-top: -6.0em; margin-bottom: -1.5em; padding: 0;"><img src="images/AD690w5_down_blue_results_arrow.png" width="163" height="98" alt=""></p><!--
+
+ --><p class="center" style="margin-top: -6.0em; margin-bottom: -0.5em; padding: 0;"><img src="images/AD690w5_down_blue_results_arrow.png" width="163" height="98" alt=""></p><!--
+
+ --><figure class="figure centermargin" style="width: 620px; margin-top: 0; margin-bottom: 0.2em; z-index: 1;">
+		<div class="title">Table 5.1: Transit Inventory under Different Logistical Networks</div>
+		<table class="data table12-1 tableFigure">
+			<tr><th rowspan="2">Forecasted<br>Average<br>Daily Sales</th><th rowspan="2">Market<br>Area</th><th rowspan="2">Warehouse X<br>Only</th><th colspan="3">Two-Warehouse Facilities</th></tr>
+			<tr><th>Warehouse X</th><th>Warehouse Y</th><th>Combined</th></tr>
+			<tr><td>6</td><td>A</td><td>36</td><td>36</td><td>&mdash;</td><td>36</td></tr>
+			<tr><td>7</td><td>B</td><td>70</td><td>&mdash;</td><td>28</td><td>28</td></tr>
+			<tr><td></td><td>\(\sum A+B\)</td><td>106</td><td></td><td></td><td>64</td></tr>
+			<tr><td></td><td>\(\bar{I_a}\)</td><td>18</td><td></td><td></td><td>18</td></tr>
+			<tr><td></td><td>\(\bar{I_b}\)</td><td>35</td><td></td><td></td><td>14</td></tr>
+			<tr><td></td><td>\(\sum\bar I\)</td><td>53</td><td></td><td></td><td>32</td></tr>
+		</table>
+      <div class="credit">Source: Bowersox et al., 2013, pp. 296-297</div>
+	</figure>
+
+    <!--<p class="credit" style="padding-left: 2.7em; padding-top: 0; margin-top: 0;">Source: Bowersox et al., 2013, pp. 296-297</p>-->
+
+	<img style="z-index: 32767; position: relative; left: 250px; bottom: 67px;" src="images/AD690w5_circles_and_arrow_trans.png" width="392" height="35" alt="">
+
+</div>
+
+
+<p>The last inventory type to consider is the <strong>safety stock</strong>, , which protects against stockouts due to uncertain demand and lead time. Increasing performance cycles (by increasing the number of warehouses) decreases total in-transit days as discussed above; however, this may result in increased overall lead-time uncertainty. The safety stock requirement increases with increased lead-time demand uncertainty, as discussed in the inventory management module.</p>
+
+
+
+<div class="examplecenter">
+
+	<p><strong>Example:</strong> Table 5.2 presents monthly sales in three markets on a combined (served by single warehouse) and separate basis (served by three warehouses). In the combined case, the average monthly sales are 22 units and the highest possible demand is 29 units (occurs in month 6). Since safety stock is the excess amount held over average demand, achieving a 100 percent service level will require a safety stock of 7 units (29 &ndash; 22 = 7) monthly (assuming that the highest demand of 29 can occur in any month with equal probability).</p>
+
+	<p>In the separate case, following the same logic and data in table 5.2, to achieve 100 percent service level each month markets A, B, and C will need 4, 3, and 4 units of safety stock. Thus, the total safety stock requirement in this case is 11 units. So, increasing the number of warehouses from one to three increased the safety stock requirement from 7 to 11 units.</p>
+
+</div>
+
+<p>Combining demand into one warehouse averages demand variability:</p>
+
+<figure class="figure centermargin" style="width:622px;" title="Copyright &copy; Trustees of Boston University 2017. Images used for educational purposes TEACH Act (Technology, Education, and Copyright Harmonization Act of 2002). All copyrights belong to respective copyright holders.">
+	<div class="title">Table 5.2: Summary of Sales in One Combined and Three Separate Markets</div>
+	<table class="data table12_4 tableFigure centertable" style="width: 620px;">
+		<tr><th rowspan="2">Month</th><th rowspan="2">Combined<br>Sales,<br>All Markets</th><th colspan="3">Unit Sales per Market</th></tr>
+		<tr style="line-height: 0.6em;"><th>A</th><th>B</th><th>C</th></tr>
+		<tr><td>1</td><td>18</td><td>9</td><td>0</td><td>9</td></tr>
+		<tr><td>2</td><td>22</td><td>6</td><td>3</td><td>13</td></tr>
+		<tr><td>3</td><td>24</td><td>7</td><td>5</td><td>12</td></tr>
+		<tr><td>4</td><td>20</td><td>8</td><td>4</td><td>8</td></tr>
+		<tr><td>5</td><td>17</td><td>2</td><td>4</td><td>11</td></tr>
+		<tr><td>6</td><td>29</td><td>10</td><td>5</td><td>14</td></tr>
+		<tr><td>7</td><td>21</td><td>7</td><td>6</td><td>8</td></tr>
+		<tr><td>8</td><td>26</td><td>7</td><td>7</td><td>12</td></tr>
+		<tr><td>9</td><td>18</td><td>5</td><td>6</td><td>7</td></tr>
+		<tr><td>10</td><td>24</td><td>9</td><td>5</td><td>10</td></tr>
+		<tr><td>11</td><td>23</td><td>8</td><td>4</td><td>11</td></tr>
+		<tr><td>12</td><td>23</td><td>12</td><td>2</td><td>9</td></tr>
+		<tr><td>Total Sales</td><td>265</td><td>90</td><td>51</td><td>124</td></tr>
+		<tr><td>Average Monthy Sales</td><td>22.1</td><td>7.5</td><td>4.3</td><td>10.3</td></tr>
+		<tr><td>Value Greater Than Average</td><td>6</td><td>6</td><td>6</td><td>6</td></tr>
+	</table>
+	<div class="credit">Source: Bowersox et al , 2013, p. 299</div>
+</figure>
+
+
+
+
+<h4>What about the impact on safety stock?</h4>
+
+<ul>
+	<li>Safety stock is needed to protect against unplanned stockouts during inventory replenishment</li>
+	<li>Uncertainty the in network is impacted by adding warehouses
+		<ul>
+			<li>Performance cycle days are reduced</li>
+			<li>Number of performance cycles increases</li>
+		</ul>
+	</li>
+	<li>Serving the same market area by adding warehouses will increase uncertainty since each facility has its own replenishment cycle, therefore, more safety stock is indeed needed.</li>
+</ul>
+
+
+
+<div class="formulacenter">
+
+	<p>\( SS = z \times \sigma_c \)</p>
+
+	<p>where</p>
+
+	<p>\(z\) = Number of standard deviations (\(z\) value associated with desired service level)</p>
+
+	<p>\(\sigma_c\) = The standard deviation of lead-team demand</p>
+
+</div>
+
+
+
+<div class="summarycenter">
+
+	<h4>Inventory Summary</h4>
+
+	<p>To summarize:</p>
+
+	<ul>
+		<li>Base stock increases with the number of market-facing warehouses</li>
+		<li>In-transit stock will typically decrease with the addition of warehouses to the network</li>
+		<li>Safety stock increases with the number of warehouses added to the network
+			<ul>
+				<li>New performance cycle requires additional safety stock</li>
+			</ul>
+		</li>
+	</ul>
+
+</div>
+
+
+
+<p>Figure 5.4 shows that average inventory in the system increases as the number of warehouses increases, due to increase in safety stock. This dominates the savings in in-transit inventory caused by the increase in the number of warehouses.</p>
+
+<figure class="image centermargin" style="width:452px;" title="Copyright &copy; Trustees of Boston University 2015. Images used for educational purposes TEACH Act (Technology, Education, and Copyright Harmonization Act of 2002). All copyrights belong to respective copyright holders.">
+	<div class="title">Figure 5.4 Average Inventory as a Function of Number of Warehouse Locations</div>
+	<img src="images/AD690w5_Figure_12_5.png" alt="" width="450" height="442">
+	<div class="credit">Source: Bowersox et al., 2013, p. 300</div>
+</figure>
+
+</body>
+
+</html>
