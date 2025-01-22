@@ -1,0 +1,216 @@
+/* Akamai Colors */
+:root {
+    --akamai-blue: #009cde;
+    --akamai-light-blue: #e8f1f9;
+    --akamai-orange: #ff9933;
+    --akamai-light-orange: #feeee0;
+    --akamai-websafe-blue: #017ac6;
+    --akamai-light-gray: #a8a8aa;
+    --akamai-dark-gray: #54565b;
+    --akamai-almost-black: #3a3b3f;
+    --akamai-broken-white: #f9f9f8;
+    --secondary-red: #d0343a;
+    --secondary-green: #00b050;
+    /* Conflict between Tech Writers Confluence and corporate Visual Brand ID Guide 2023 */
+    --secondary-green2: #81bc00;
+    --secondary-navy-blue: #002856;
+    --secondary-purple: #753bbd;
+
+    /* Akamai light gray is still too dark for backgrounds */
+    --panel-bg-color: #f7f7f7;
+}
+
+.akamai-gray-panel { background-color: var(--panel-bg-color); }
+.akamai-blue { color: var(--akamai-blue); }
+.akamai-blue-bg { background-color: var(--akamai-blue); }
+.akamai-light-blue { color: var(--akamai-light-blue); }
+.akamai-light-blue-bg { background-color: var(--akamai-light-blue); }
+.akamai-orange { color: var(--akamai-orange); }
+.akamai-orange-bg { background-color: var(--akamai-orange); }
+.akamai-light-orange { color: var(--akamai-light-orange); }
+.akamai-light-orange-bg { background-color: var(--akamai-light-orange); }
+.akamai-websafe-blue { color: var(-akamai-websafe-blue); }
+.akamai-websafe-blue-bg { background-color: var(-akamai-websafe-blue); }
+.akamai-light-gray { color: var(--akamai-light-gray); }
+.akamai-light-gray-bg { background-color: var(--akamai-light-gray); }
+.akamai-dark-gray { color: var(--akamai-dark-gray); }
+.akamai-dark-gray-bg { background-color: var(--akamai-dark-gray); }
+.akamai-almost-black { color: var(--akamai-almost-black); }
+.akamai-almost-black-bg { background-color: var(--akamai-almost-black); }
+.akamai-broken-white { color: var(--akamai-broken-white); }
+.akamai-broken-white-bg { background-color: var(--akamai-broken-white); }
+.secondary-red { color: var(--secondary-red); }
+.secondary-red-bg { background-color: var(--secondary-red); }
+.secondary-green { color: var(--secondary-green); }
+.secondary-green-bg { background-color: var(--secondary-green); }
+/* Conflict between Tech Writers Confluence and corporate Visual Brand ID Guide 2023 */
+.secondary-green2 { color: var(--secondary-green2); }
+.secondary-green2-bg { background-color: var(--secondary-green2); }
+.secondary-navy-blue { color: var(--secondary-navy-blue); }
+.secondary-navy-blue-bg { background-color: var(--secondary-navy-blue); }
+.secondary-purple { color: var(--secondary-purple); }
+.secondary-purple-bg { background-color: var(--secondary-purple); }
+
+
+/* Hidden titles and blue title box support */
+
+/* Hide title text */
+#title-text {
+    visibility: hidden;
+    font-size: 0px!important;
+}
+
+/* Blue box with document or program title and the "search" box */
+.header {
+    overflow: hidden;
+    font-weight: 400;
+    font-size: 16px;
+    /* Vertically center items in this box */
+    display: flex;
+    align-items: center;
+    box-shadow: 0 10px 10px -10px rgba(0,0,0,0.2), 0 10px 10px -10px rgba(0,0,0,0.2);
+    background-color: var(--secondary-navy-blue);
+}
+
+/* Title text inside dot-header block */
+/* Use span class="akamai-orange" to alternate text color */
+.header-text {
+    font-weight: 600;
+    font-size: 150%;
+    padding: 18px 0px 18px 18px;
+    color: var(--akamai-blue);
+}
+
+/* Search box inside dot-header block */
+.header-search {
+    float: right;
+    padding: 0px 10px 18px 0px;
+}
+
+/* Meant to mimic Confluence H1 so you can put the document's title (hidden with #title-text) below the blue box with the "search box" */
+.new-title {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+/* Mimic H1 for header inside our blue and orange boxes */
+/* Use with classes akamai-blue-bg and akamai-orange-bg to set background color */
+.panel-h1 {
+    font-weight: 600;
+    font-size: 160%;
+    padding: 10px 20px;
+    color: white;
+    /* Vertically center items in this box */
+    display: flex;
+    align-items: center;
+}
+
+
+/* Support all other Akamai look and feel */
+
+.content-container {
+  /* All the background image supports */
+  transform: translate(0px, 0px, 0px);
+  background-image: linear-gradient(to right, rgba(255, 255, 255) 0%, rgba(242, 242, 242) 25%, rgba(217, 217, 217) 75%, rgba(191, 191, 191) 100%);
+  width: 100%;
+  height: 165px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 10px 10px 10px 15px;
+}
+
+.blur {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.slogan{
+  padding: 27px 5px;
+  display: inline-block;
+  width: calc(75% - 20px);
+  height: auto;
+  font-size: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+}
+
+.rightside {
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.8) 0%, rgba(165, 165, 165, 0.6) 100%);
+  opacity: 1.0;
+  float: right;
+  width: calc(25% - 5px);
+  height: calc(100% - 20px);
+  border: 1px solid white;
+  padding: 5px;
+  display: inline-block;
+  position: absolute;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.rightside button {
+  width: 100%;
+  background-color: #F1780E; /* Color per ARC design, this is darker than "Akamai orange" */
+  border-radius: 4px;
+  transition-duration: 0.4s;
+  border: 2px solid #DE350B; /* This is a red, less strawberry-like than "Akamai secondary red" */
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  float: right;
+  box-shadow: 2px 2px 4px 0 rgba(92,92,92,0.25);
+}
+
+h1:after {
+    content: ""; /* This is necessary for the pseudo element to work. */
+    display: block; /* This will put the pseudo element on its own line. */
+    width: 40%; /* Change this to whatever width you want. */
+    margin: 0 auto;
+    padding-top: 10px; /* This creates some space between the element and the border. */
+    /* border-bottom: 1px solid #104774; /* This creates a blue border. Consider Akamai secondary navy blue. */
+}
+
+h2:after {
+    content: ""; /* This is necessary for the pseudo element to work. */
+    display: block; /* This will put the pseudo element on its own line. */
+    width: 40%; /* Change this to whatever width you want. */
+    margin: 0 auto;
+    padding-top: 10px; /* This creates some space between the element and the border. */
+    /* border-bottom: 1px solid #104774; /* This creates a blue border. Consider Akamai secondary navy blue. */
+}
+
+.column {
+  float: left;
+  padding: 5px;
+  width: calc(21% - 10px);
+}
+.column1 {
+  float: left;
+  width: calc(75% - 10px);
+  padding: 5px;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+@media screen and (max-width: 500px) {
+  .column, .column1, .column2 {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+ rightside {
+    width: 100%;
+    height: auto;
+  }
+}
